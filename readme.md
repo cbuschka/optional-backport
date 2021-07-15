@@ -1,4 +1,5 @@
 # A JDK 7 compatible backport of java.util.Optional
+[![Build](https://github.com/cbuschka/optional/workflows/build/badge.svg)](https://github.com/cbuschka/optional) [![License](https://img.shields.io/github/license/cbuschka/optional.svg)](https://github.com/cbuschka/optional/blob/main/license.txt)
 
 ## License
 Copyright (c) 2021 by [Cornelius Buschka](https://github.com/cbuschka).
