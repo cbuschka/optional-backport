@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.cbuschka.optional-backport</groupId>
     <artifactId>optional-backport</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>optional-backport</name>
     <description>A JDK 7 compatible backport of java.util.Optional</description>
@@ -16,7 +16,7 @@
     <scm>
         <developerConnection>scm:git:ssh://git@github.com/cbuschka/optional-backport.git</developerConnection>
         <connection>scm:git:ssh://git@github.com/cbuschka/optional-backport.git</connection>
-        <tag>v1.0.0</tag>
+        <tag>HEAD</tag>
         <url>https://github.com/cbuschka/optional-backport</url>
     </scm>
     <developers>
