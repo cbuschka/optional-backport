@@ -1,14 +1,16 @@
 # A JDK 7 compatible backport of java.util.Optional
-[![Build](https://github.com/cbuschka/optional/workflows/build/badge.svg)](https://github.com/cbuschka/optional) [![License](https://img.shields.io/github/license/cbuschka/optional.svg)](https://github.com/cbuschka/optional/blob/main/license.txt)
+[![Build](https://github.com/cbuschka/optional-backport/workflows/build/badge.svg)](https://github.com/cbuschka/optional-backport) [![Maven Central](https://img.shields.io/maven-central/v/com.github.cbuschka.optional-backport/optional-backport.svg)](https://search.maven.org/search?q=g:com.github.cbuschka.optional-backport%20AND%20a:optional-backport) [![License](https://img.shields.io/github/license/cbuschka/optional.svg)](https://github.com/cbuschka/optional/blob/main/license.txt)
 
 ## Maven dependency
 ```xml
 <dependency>
   <groupId>com.github.cbuschka.optional-backport</groupId>
   <artifactId>optional-backport</artifactId>
-  <version>1.0.0</version>
+  <version>RELEASE</version>
 </dependency>
 ```
+
+Please use the [latest version](https://search.maven.org/search?q=g:com.github.cbuschka.optional-backport%20AND%20a:optional-backport).
 
 ## License
 Copyright (c) 2021 by [Cornelius Buschka](https://github.com/cbuschka).
