@@ -4,8 +4,8 @@
 ## Maven dependency
 ```xml
 <dependency>
-  <groupId>com.github.cbuschka.optional</groupId>
-  <artifactId>optional</artifactId>
+  <groupId>com.github.cbuschka.optional-backport</groupId>
+  <artifactId>optional-backport</artifactId>
   <version>1.0.0</version>
 </dependency>
 ```

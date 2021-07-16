@@ -8,6 +8,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>optional-backport</name>
+    <description>A JDK 7 compatible backport of java.util.Optional</description>
     <url>https://github.com/cbuschka/optional-backport</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
