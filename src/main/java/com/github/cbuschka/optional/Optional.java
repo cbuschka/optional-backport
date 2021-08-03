@@ -69,6 +69,13 @@ public final class Optional<T>
 		}
 	}
 
+	public T orElseGet(Supplier<? extends T> supplier)
+	{
+		Objects.requireNonNull(supplier);
+
+		return isPresent() ? value : supplier.get();
+	}
+
 	public boolean isEmpty()
 	{
 		return value == null;

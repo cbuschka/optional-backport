@@ -148,4 +148,39 @@ public class OptionalTest
 
 		assertEquals("bar", result);
 	}
+
+	@Test
+	public void orElseGetOfNonEmptyGivesValue()
+	{
+		Optional<String> given = Optional.of("foo");
+
+		String result = given.orElseGet(new Supplier<String>()
+		{
+			@Override
+			public String get()
+			{
+				fail("Should not be called.");
+				return null;
+			}
+		});
+
+		assertEquals(result, "foo");
+	}
+
+	@Test
+	public void orElseGetOfEmptyShouldGetFromSupplier()
+	{
+		Optional<String> given = Optional.empty();
+
+		String result = given.orElseGet(new Supplier<String>()
+		{
+			@Override
+			public String get()
+			{
+				return "foo";
+			}
+		});
+
+		assertEquals("foo", result);
+	}
 }
