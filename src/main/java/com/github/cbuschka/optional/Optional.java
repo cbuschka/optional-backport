@@ -91,6 +91,29 @@ public final class Optional<T>
 		return other;
 	}
 
+	public T orElseThrow()
+	{
+		if (value == null)
+		{
+			throw new NoSuchElementException("No value present");
+		}
+		return value;
+	}
+
+	public <E extends Throwable> T orElseThrow(Supplier<? extends E> exceptionSupplier) throws E
+	{
+		Objects.requireNonNull(exceptionSupplier);
+
+		if (isPresent())
+		{
+			return value;
+		}
+		else
+		{
+			throw exceptionSupplier.get();
+		}
+	}
+
 	@Override
 	public boolean equals(Object o)
 	{

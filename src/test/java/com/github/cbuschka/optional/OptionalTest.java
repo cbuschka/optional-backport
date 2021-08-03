@@ -184,4 +184,61 @@ public class OptionalTest
 
 		assertEquals("foo", result);
 	}
+
+	@Test
+	public void orElseThrowOfNonEmptyGivesValue()
+	{
+		Optional<String> given = Optional.of("foo");
+
+		String result = given.orElseThrow();
+
+		assertEquals(result, "foo");
+	}
+
+	@Test
+	public void orElseThrowOfEmptyThrowsNoSuchElementException()
+	{
+		expectedException.expect(NoSuchElementException.class);
+
+		Optional<String> given = Optional.empty();
+
+		@SuppressWarnings("unused")
+		String result = given.orElseThrow();
+	}
+
+	@Test
+	public void orElseThrowWithSupplierOfNonEmptyGivesValue()
+	{
+		Optional<String> given = Optional.of("foo");
+
+		String result = given.orElseThrow(new Supplier<RuntimeException>()
+		{
+			@Override
+			public RuntimeException get()
+			{
+				fail("Should not be called.");
+				return null;
+			}
+		});
+
+		assertEquals(result, "foo");
+	}
+
+	@Test
+	public void orElseThrowWithSupplierOfEmptyThrowsNoSuchElementException()
+	{
+		expectedException.expect(IllegalArgumentException.class);
+
+		Optional<String> given = Optional.empty();
+
+		@SuppressWarnings("unused")
+		String result = given.orElseThrow(new Supplier<IllegalArgumentException>()
+		{
+			@Override
+			public IllegalArgumentException get()
+			{
+				return new IllegalArgumentException();
+			}
+		});
+	}
 }
