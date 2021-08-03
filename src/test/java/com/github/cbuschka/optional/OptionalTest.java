@@ -80,7 +80,8 @@ public class OptionalTest
 	{
 		expectedException.expect(NoSuchElementException.class);
 
-		Optional.empty().get();
+		@SuppressWarnings("unused")
+		Object o = Optional.empty().get();
 	}
 
 	@Test
