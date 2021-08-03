@@ -10,6 +10,7 @@ import java.util.NoSuchElementException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class OptionalTest
 {
@@ -111,5 +112,40 @@ public class OptionalTest
 		String value2 = new String(value.getBytes(StandardCharsets.UTF_8));
 
 		assertEquals(Optional.of(value), Optional.of(value2));
+	}
+
+	@Test
+	public void mapOfEmptyGivesEmpty()
+	{
+		Optional<Object> given = Optional.empty();
+
+		Optional<Object> result = given.map(new Function<Object, Object>()
+		{
+			@Override
+			public Object apply(Object o)
+			{
+				fail("Should not be called.");
+				return null;
+			}
+		});
+
+		assertTrue(result.isEmpty());
+	}
+
+	@Test
+	public void mapShouldCallMappingFunc()
+	{
+		Optional<String> given = Optional.of("foo");
+
+		String result = given.map(new Function<String, String>()
+		{
+			@Override
+			public String apply(String s)
+			{
+				return "bar";
+			}
+		}).get();
+
+		assertEquals("bar", result);
 	}
 }

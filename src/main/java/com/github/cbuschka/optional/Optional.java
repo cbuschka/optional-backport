@@ -54,6 +54,21 @@ public final class Optional<T>
 		return this.value;
 	}
 
+	public <R> Optional<R> map(Function<? super T, ? extends R> mapFunc)
+	{
+		Objects.requireNonNull(mapFunc);
+
+		if (!isPresent())
+		{
+			return empty();
+		}
+		else
+		{
+			R result = mapFunc.apply(value);
+			return Optional.ofNullable(result);
+		}
+	}
+
 	public boolean isEmpty()
 	{
 		return value == null;
